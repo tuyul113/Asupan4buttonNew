@@ -82,7 +82,6 @@ async def is_subscribed(filter, client, update):
 
     return member.status in ["creator", "administrator", "member"]
 
-
 async def encode(string):
     string_bytes = string.encode("ascii")
     base64_bytes = base64.urlsafe_b64encode(string_bytes)
