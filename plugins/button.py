@@ -37,13 +37,14 @@ def start_button(client):
             ],
         ]
         return buttons
-    if FORCE_SUB_CHANNEL and FORCE_SUB_GROUP:
+    if FORCE_SUB_CHANNEL and FORCE_SUB_GROUP and FORCE_SUB_CHANNEL1:
         buttons = [
             [
                 InlineKeyboardButton(text="ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅs", callback_data="help"),
             ],
             [
                 InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ", url=client.invitelink),
+                InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ", url=client.invitelink3),
                 InlineKeyboardButton(text="ɢʀᴏᴜᴘ", url=client.invitelink2),
             ],
             [InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data="close")],
@@ -88,6 +89,7 @@ def fsub_button(client, message):
         except IndexError:
             pass
         return buttons
+    
     if FORCE_SUB_CHANNEL and FORCE_SUB_GROUP and FORCE_SUB_CHANNEL1:
         buttons = [
             [
