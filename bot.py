@@ -100,10 +100,10 @@ class Bot(Client):
         if FORCE_SUB_GROUP:
             try:
                 info = await self.get_chat(FORCE_SUB_GROUP)
-                link = info.invite_link
+                link = info.invite_link3
                 if not link:
                     await self.export_chat_invite_link(FORCE_SUB_GROUP)
-                    link = info.invite_link
+                    link = info.invite_link3
                 self.invitelink3 = link
                 self.LOGGER(__name__).info(
                     f"FORCE_SUB_GROUP detected!\n┌ Title: {info.title}\n└ Chat ID: {info.id}\n——"
@@ -115,6 +115,30 @@ class Bot(Client):
                 )
                 self.LOGGER(__name__).warning(
                     f"Pastikan @{self.username} adalah admin di Group Tersebut, Chat ID F-Subs Group Saat Ini: {FORCE_SUB_GROUP}"
+                )
+                self.LOGGER(__name__).info(
+                    "Bot Berhenti. Gabung Group https://t.me/SharingUserbot untuk Bantuan"
+                )
+                sys.exit()
+                
+        if FORCE_SUB_GROUP1:
+            try:
+                info = await self.get_chat(FORCE_SUB_GROUP1)
+                link = info.invite_link4
+                if not link:
+                    await self.export_chat_invite_link(FORCE_SUB_GROUP1)
+                    link = info.invite_link4
+                self.invitelink4 = link
+                self.LOGGER(__name__).info(
+                    f"FORCE_SUB_GROUP detected!\n┌ Title: {info.title}\n└ Chat ID: {info.id}\n——"
+                )
+            except Exception as a:
+                self.LOGGER(__name__).warning(a)
+                self.LOGGER(__name__).warning(
+                    "Bot tidak dapat Mengambil link invite dari FORCE_SUB_GROUP!"
+                )
+                self.LOGGER(__name__).warning(
+                    f"Pastikan @{self.username} adalah admin di Group Tersebut, Chat ID F-Subs Group Saat Ini: {FORCE_SUB_GROUP1}"
                 )
                 self.LOGGER(__name__).info(
                     "Bot Berhenti. Gabung Group https://t.me/SharingUserbot untuk Bantuan"
